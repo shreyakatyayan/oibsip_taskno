@@ -1,0 +1,11 @@
+const celsius = document.querySelector("#celsius");
+farhenheit = document.querySelector("#farhenheit");
+window.addEventListener("load", () => celsius.focus());
+celsius.addEventListener("input", () => {
+  farhenheit.value = ((celsius.value * 9) / 5 + 32).toFixed(2);
+  if (!celsius.value) farhenheit.value = "";
+});
+farhenheit.addEventListener("input", () => {
+  celsius.value = (((farhenheit.value - 32) * 5) / 9).toFixed(2);
+  if (!farhenheit.value) celsius.value = "";
+});
